@@ -8,10 +8,8 @@
     function controller(dataservice, config, $timeout) {
         var self = this;
 
-        self.options ={
-            showTopPagination : true, 
-            showBottomPagination : true 
-        }
+        self.options = dataservice.options;
+
         self.pages = {};
         self.resultStats = "";
         self.query = "";

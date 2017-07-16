@@ -8,14 +8,20 @@
     function dataservice($http, config, $q, storage) {
 
         var options = {
+            showTopPagination: false,
+            showBottomPagination: true,
+
             from: 0, size: 10,
             default_operator: "and",
             fields: ["_all"],// ["Nom","Prenom"],
             DAIP: { "range": { "DateDebutContrat": { "gte": "2000-01-01" } } }
         };
+
         options = storage.getData() || options;
+        
         return {
-            getData: getData
+            getData: getData,
+            options:options
         };
 
         function getData(term, page) {
