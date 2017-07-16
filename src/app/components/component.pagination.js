@@ -14,16 +14,16 @@
     });
 
     function controller() {
-        this.total = Math.floor(this.total / 10) + 1;
+        var self = this;
         this.getPage = function (index) {
-            console.log(index);
-            this.onBtnClick({page:index}) ;
-            
+
+            self.onBtnClick({ page: index });
+
         }
 
         this.getpages = function (current, total) {
+            total = Math.floor(self.total / 10) + 1;
             var array = [];
-
             var last = 10 + Math.floor(current / 10) * 10;
             last = last < total ? last : total;
 
@@ -34,7 +34,6 @@
                 array.push(index < 10 ? "0" + index : index);
 
             }
-            console.log(array);
             return array;
         };
 

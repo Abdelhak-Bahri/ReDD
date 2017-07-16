@@ -23,7 +23,10 @@
                 .then(success);
         };
         self.getPage = function (page) {
+
             console.log("clicked", page);
+            dataservice.getData(self.query, page)
+                .then(success);
         }
         init();
 
