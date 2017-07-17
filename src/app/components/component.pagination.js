@@ -16,7 +16,7 @@
 
     function controller() {
         var self = this;
-        
+        self.totalPage = 0; 
         this.$onInit = function () {
             self.size = self.size || 10;
             console.log("On    init")
@@ -31,6 +31,7 @@
         this.getpages = function (current, total) {
             // Nombre de page
             total = Math.floor(self.total / self.size) + 1;
+            self.totalPage = numberWithCommas(total); 
             // Nombre de button par page 
             var MAX_NUMBER_ELEMENT = 10;
             var array = [];

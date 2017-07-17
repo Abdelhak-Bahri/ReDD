@@ -1,6 +1,8 @@
 <nav aria-label="Page navigation">
     <ul class="pagination">
-
+        <div>
+            {{vm.totalPage}}   page(s)
+        </div>
         <li ng-class="{active : vm.current*1 == page*1  }" ng-repeat="page in vm.getpages(vm.current, vm.total)">
 
             <a ng-show="$first && (page > 1)" aria-label="Prior" ng-click="vm.getPage(page) ">
@@ -14,9 +16,10 @@
             <a ng-show="$last && (vm.total > page * vm.size)" aria-label="Next" ng-click="vm.getPage(page)" >
                 <!--<span class="sr-only">Suivant</span>
                 <span aria-hidden="true">&raquo;</span>-->
-                <span class="glyphicon glyphicon-forward" aria-hidden="true">{{vm.total}} -- size {{page * vm.size}}  </span>
+                <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
             </a>
 
         </li>
+
     </ul>
 </nav>

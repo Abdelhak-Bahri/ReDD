@@ -11,7 +11,7 @@
             showTopPagination: false,
             showBottomPagination: true,
 
-            from: 0, size: 5,
+            from: 0, size: 10,
             default_operator: "and",
             fields: ["_all"],// ["Nom","Prenom"],
             DAIP: { "range": { "DateDebutContrat": { "gte": "2000-01-01" } } }
