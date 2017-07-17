@@ -4,14 +4,13 @@
     function controller() {
         
     };
-    app.component("component.demandeurs", {
-            templateUrl: "dist/views/component.demandeurs.html",
+    app.component("component.demandeur", {
+            templateUrl: "dist/views/component.demandeur.html",
             controller: controller,
             controllerAs: "vm",
             bindings:
             {
-                demandeurs: "<",
-                pages: "<"
+                demandeur: "<"
             }
         });
 } (angular.module("app")));
