@@ -25,12 +25,12 @@
             dataservice.getData(self.query)
                 .then(success);
         };
-        self.getPage = function (page) {
 
-            console.log("clicked", page);
+        self.getPage = function (page) {
             dataservice.getData(self.query, page)
                 .then(success);
         }
+
         init();
 
         function success(data) {

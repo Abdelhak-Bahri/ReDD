@@ -19,13 +19,10 @@
         self.totalPage = 0; 
         this.$onInit = function () {
             self.size = self.size || 10;
-            console.log("On    init")
         };
 
         this.getPage = function (index) {
-
             self.onBtnClick({ page: index });
-
         }
 
         this.getpages = function (current, total) {
@@ -39,8 +36,6 @@
             var last = MAX_NUMBER_ELEMENT + Math.floor(current / MAX_NUMBER_ELEMENT) * MAX_NUMBER_ELEMENT;
             last = last < total ? last : total;
             
-            
-
             var start = Math.floor(current / MAX_NUMBER_ELEMENT) * MAX_NUMBER_ELEMENT;
 
             start = start > 0 ? start - 1 : 1;
