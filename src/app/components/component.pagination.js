@@ -8,6 +8,7 @@
         bindings: {
             total: "<",
             current: "<",
+            size: "<",
             onBtnClick: '&'
         }
 
@@ -15,6 +16,12 @@
 
     function controller() {
         var self = this;
+        
+        this.$onInit = function () {
+            self.size = self.size || 10;
+            console.log("On    init")
+        };
+
         this.getPage = function (index) {
 
             self.onBtnClick({ page: index });
@@ -22,16 +29,23 @@
         }
 
         this.getpages = function (current, total) {
-            total = Math.floor(self.total / 10) + 1;
+            // Nombre de page
+            total = Math.floor(self.total / self.size) + 1;
+            // Nombre de button par page 
+            var MAX_NUMBER_ELEMENT = 10;
             var array = [];
-            var last = 10 + Math.floor(current / 10) * 10;
-            last = last < total ? last : total;
 
-            var start = Math.floor(current / 10) * 10;
+            var last = MAX_NUMBER_ELEMENT + Math.floor(current / MAX_NUMBER_ELEMENT) * MAX_NUMBER_ELEMENT;
+            last = last < total ? last : total;
+            
+            
+
+            var start = Math.floor(current / MAX_NUMBER_ELEMENT) * MAX_NUMBER_ELEMENT;
+
             start = start > 0 ? start - 1 : 1;
 
             for (var index = start; index <= last; index++) {
-                array.push(index < 10 ? "0" + index : index);
+                array.push(index < self.pageSize ? "0" + index : index);
 
             }
             return array;

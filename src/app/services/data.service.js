@@ -11,7 +11,7 @@
             showTopPagination: false,
             showBottomPagination: true,
 
-            from: 0, size: 10,
+            from: 0, size: 5,
             default_operator: "and",
             fields: ["_all"],// ["Nom","Prenom"],
             DAIP: { "range": { "DateDebutContrat": { "gte": "2000-01-01" } } }
@@ -27,7 +27,7 @@
         function getData(term, page) {
             page = (page || 1);
 
-            var from = (page - 1) * 10;
+            var from = (page - 1) * options.size;
 
             var dsl = query(term, from);
             return $http.post(config.DATA, dsl)

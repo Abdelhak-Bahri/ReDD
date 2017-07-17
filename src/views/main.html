@@ -7,7 +7,8 @@
     <form class="form-horizontal" role="form" ng-submit="vm.simpleSearch()" ng-show="vm.isSimpleSearch">
         <div class="col-md-7">
             <div class="input-group" style="padding:50px auto">
-                <input type="text" class="form-control" autofocus autocomplete="off" ng-model="vm.query" placeholder="Chercher par: Nom , Prénom , Année de Naissance , Commune de Naissance ..."/>
+                <input type="text" class="form-control" autofocus autocomplete="off" ng-model="vm.query" placeholder="Chercher par: Nom , Prénom , Année de Naissance , Commune de Naissance ..."
+                />
                 <div class="input-group-btn">
                     <button type="submit" id="btnSimpleSearch" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                 </div>
@@ -22,7 +23,8 @@
 <div id="resultStats" style="color: #808080; padding-left:12px">
     {{vm.resultStats}}
 </div>
-<component.pagination ng-show="vm.options.showTopPagination" total="vm.pages.total" current="vm.pages.current" on-Btn-Click="vm.getPage(page)" style="text-align: center"></component.pagination>
+<component.pagination ng-show="vm.options.showTopPagination" total="vm.pages.total" current="vm.pages.current" on-Btn-Click="vm.getPage(page)"
+    style="text-align: center"></component.pagination>
 </div>
 
 <div class="app-usagovsearch result-container">
@@ -41,7 +43,9 @@
                     </span>
                     </p>
                     <p class="summary" ng-if="demandeur._source.WilResidance">Résidant a la wilaya : <strong>{{demandeur._source.WilResidance}} </p>
-                    <p class="summary" ng-if="demandeur._source.ComResidance">Commune : <strong>{{demandeur._source.ComResidance}} </strong><span class="highlight">Inscrit a l'agence: </span>                        <span> <strong>{{demandeur._source.AgenceDemandeur}}</strong></span></p>
+                    <p class="summary" ng-if="demandeur._source.ComResidance">Commune : <strong>{{demandeur._source.ComResidance}} </strong>
+                        <span
+                            class="highlight">Inscrit a l'agence: </span> <span> <strong>{{demandeur._source.AgenceDemandeur}}</strong></span></p>
                     <p class="summary" ng-if="demandeur._source.DateDebutContrat">Date debut de contrat : <strong>{{demandeur._source.DateDebutContrat  | date:'dd/MM/yyyy'}} </strong>
                         <span class="highlight">Date Fin: </span> <span> <strong>{{demandeur._source.DateFinContrat  | date:'dd/MM/yyyy'}}</strong></span></p>
                 </li>
@@ -52,4 +56,7 @@
 
 </div>
 
-<component.pagination ng-show="vm.options.showBottomPagination" total="vm.pages.total" current="vm.pages.current" on-Btn-Click="vm.getPage(page)" style="text-align: center"></component.pagination>
+<component.pagination ng-show="vm.options.showBottomPagination" total="vm.pages.total" current="vm.pages.current" size="vm.options.size"
+    on-Btn-Click="vm.getPage(page)" style="text-align: center">
+
+</component.pagination>

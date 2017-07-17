@@ -8,13 +8,13 @@
                 <span class="sr-only">Précedent</span>-->
                 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
             </a>
-            <a ng-hide="($last && (vm.total > page)) || ($first && (page > 1))" ng-click="vm.getPage(page)">
+            <a ng-hide="($last && (vm.total > page  * vm.size)) || ($first && (page > 1))" ng-click="vm.getPage(page)">
                 <span class="sr-only">{{page}}</span>
             </a>
-            <a ng-show="$last && (vm.total > page)" aria-label="Next" ng-click="vm.getPage(page)" >
+            <a ng-show="$last && (vm.total > page * vm.size)" aria-label="Next" ng-click="vm.getPage(page)" >
                 <!--<span class="sr-only">Suivant</span>
                 <span aria-hidden="true">&raquo;</span>-->
-                <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-forward" aria-hidden="true">{{vm.total}} -- size {{page * vm.size}}  </span>
             </a>
 
         </li>
