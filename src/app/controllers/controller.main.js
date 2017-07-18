@@ -20,9 +20,9 @@
         }, 1000)
 
         self.simpleSearch = function (query) {
-            query = query || self.query;
-
-            console.log("Searche for : " + query);
+            query = query || "";
+            self.query = query;
+            console.log("Searche for : " + self.query);
             
             dataservice.getData(query)
                 .then(success);
