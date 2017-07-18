@@ -1,6 +1,6 @@
-<nav aria-label="Page navigation">
+<nav aria-label="Page navigation" ng-show="vm.totalPage">
     <ul class="pagination">
-        <div ng-show="vm.current">
+        <div>
            {{vm.current}} sur {{vm.totalPage}} page(s)
         </div>
         <li ng-class="{active : vm.current*1 == page*1  }" ng-repeat="page in vm.getpages(vm.current, vm.total)">
