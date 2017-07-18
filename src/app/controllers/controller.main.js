@@ -19,10 +19,12 @@
             self.isSimpleSearch = true;
         }, 1000)
 
-        self.simpleSearch = function () {
-            console.log("Searche for : " + self.query);
+        self.simpleSearch = function (query) {
+            query = query || self.query;
 
-            dataservice.getData(self.query)
+            console.log("Searche for : " + query);
+            
+            dataservice.getData(query)
                 .then(success);
         };
 
