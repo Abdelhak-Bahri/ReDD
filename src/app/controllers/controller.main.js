@@ -41,7 +41,6 @@
             self.resultStats = "About " + numberWithCommas(data.hits.total) + " results ( " + data.took / 1000 + " seconds) "
             // console.log(data.hits);
 
-
             self.pages.total = data.hits.total;
             self.pages.current = data.hits.current;
             // console.log("Page : ", self.pages);
