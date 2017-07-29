@@ -8,7 +8,7 @@
 
     function storage($localStorage, $q) {
         var storageName = "ReDD";
-        console.log("localstorage")
+        // console.log("localstorage")
         return {
             getData: getData,
             saveData: saveData
