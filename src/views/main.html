@@ -6,15 +6,6 @@
 
     <div class="col-md-7">
         <component.simple-search on-submit="vm.simpleSearch(query)" ng-show="vm.isSimpleSearch"></component.simple-search>
-        <!--<form class="form-horizontal" role="form" ng-submit="vm.simpleSearch()">
-            <div class="input-group" style="padding:50px auto">
-                <input type="text" class="form-control" autofocus autocomplete="off" ng-model="vm.query" placeholder="Chercher par: Nom , Prénom , Année de Naissance , Commune de Naissance ..."
-                />
-                <div class="input-group-btn">
-                    <button type="submit" id="btnSimpleSearch" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                </div>
-            </div>
-        </form>-->
     </div>
 
     <div class="loader" style="float: none ; margin: 0 auto" ng-show="!vm.isSimpleSearch"></div>
